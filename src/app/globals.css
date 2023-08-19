@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding:0;
+  overflow: hidden;
+}
+
+ul, li{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
