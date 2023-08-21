@@ -1,50 +1,77 @@
 import React from 'react';
-import { Logo } from '../../../public/assets/svgs';
+import Image from 'next/image';
+import MainImage from 'public/assets/homepage/hero-bg-desktop@2x.jpg';
+import MainResponsiveImage from 'public/assets/homepage/hero-bg-tablet@2x.jpg';
 import Button from './Button';
-import Image from "next/image";
-import MainBackground from "public/assets/homepage/hero-bg-desktop@2x.jpg"
+import { Logo, MobileLogo } from '../../../public/assets/svgs';
 
 function MainContainer() {
   return (
-    <section className="h-[820px] w-full bg-cod-gray lg:px-[165px] px-20 pt-16 text-white relative">
-      <Logo className="z-50" />
-    
-      <section className="w-full flex max-lg:flex-col justify-between">
-        <div className="mt-[153px] z-50">
-          <h1 className="text-7xl opacity-80">
+    <section className="
+          relative
+          flex
+          h-[992px]
+          w-full
+          flex-col
+          bg-cod-gray
+          px-20
+          pt-[24rem]
+          text-white
+          max-md:items-center
+          max-md:text-center
+          md:h-[820px]
+          md:pt-16
+          lg:px-[165px]
+        "
+    >
+
+      <Logo className="z-50 max-sm:hidden" />
+      <MobileLogo className="z-50 sm:hidden" />
+
+      <section className="flex w-full justify-between max-lg:flex-col">
+        <div className="z-50 mt-9 sm:mt-[38px] md:mt-[153px]">
+          <h1 className="text-[32px] font-light opacity-80 sm:text-5xl md:text-7xl">
             Exquisite dining
             <br />
             since 1989
           </h1>
-          <p className="w-[445px] text-body-2 opacity-80">
+          <p className="mt-5 text-base opacity-80 sm:text-body-2 md:mt-[10px] md:w-[445px]">
             Experience our seasonal menu in beautiful country surroundings.
             Eat the freshest produce from the comfort of our farmhouse.
           </p>
-          <Button buttonType="button"> book a table </Button>
+          <Button> book a table </Button>
         </div>
 
-
-        <Image 
-          width={570}
+        <Image
+          width={2880}
           height={260}
           alt="bg-main-image"
-          src={MainBackground}
+          src={MainImage}
+          placeholder="blur"
+          priority
           className="
             absolute
-            w-[570px]
+            right-[-16rem]
+            top-0
+            z-30
             h-full
+            w-[570px]
             object-cover
             object-right
-            top-0
-            lg:right-0
-            right-[-16rem]
-            z-30
             max-md:hidden
+            lg:right-0
           "
-          placeholder="blur"
-          priority={true}
         />
 
+        <Image
+          width={1536}
+          height={804}
+          alt="bg-main-responsive-image"
+          src={MainResponsiveImage}
+          placeholder="blur"
+          priority
+          className="absolute left-0 top-0 h-full w-full object-cover object-center md:hidden"
+        />
       </section>
     </section>
   );

@@ -5,6 +5,8 @@
     "global-require": 0 ,
     "linebreak-style": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
-    
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
   }
 }
