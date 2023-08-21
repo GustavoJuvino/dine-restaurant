@@ -8,21 +8,22 @@ import { Logo, MobileLogo } from '../../../public/assets/svgs';
 function MainContainer() {
   return (
     <section className="
-          relative
-          flex
-          h-[992px]
-          w-full
-          flex-col
-          bg-cod-gray
-          px-20
-          pt-[24rem]
-          text-white
-          max-md:items-center
-          max-md:text-center
-          md:h-[820px]
-          md:pt-16
-          lg:px-[165px]
-        "
+        relative
+        flex
+        h-[992px]
+        w-full
+        flex-col
+        bg-cod-gray
+        px-6
+        pt-[24rem]
+        text-white
+        max-md:items-center
+        max-md:text-center
+        mobile:px-20
+        md:h-[820px]
+        md:pt-16
+        lg:px-[165px]
+      "
     >
 
       <Logo className="z-50 max-sm:hidden" />
@@ -69,7 +70,6 @@ function MainContainer() {
           alt="bg-main-responsive-image"
           src={MainResponsiveImage}
           placeholder="blur"
-          priority
           className="absolute left-0 top-0 h-full w-full object-cover object-center md:hidden"
         />
       </section>

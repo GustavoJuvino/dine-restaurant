@@ -1,34 +1,55 @@
 import React, { ComponentProps } from 'react';
+import { VariantProps, tv } from 'tailwind-variants';
 
-type ButtonProps = ComponentProps<'button'>;
+const button = tv({
+  base: `
+    mt-10
+    text-[14px]
+    font-bold
+    uppercase
+    duration-300
+    max-mobile:tracking-[1.5px]
+    mobile:w-[245px]
+    mobile:text-lg
+  `,
+  variants: {
+    size: {
+      default: 'h-16 w-[145px]',
+    },
+    buttonStyle: {
+      default: 'border-[1px] border-white hover:bg-white hover:text-black',
+      dark: `
+        border-[1px]
+        border-cod-gray
+        bg-cod-gray
+        text-white
+        hover:border-cod-gray
+        hover:bg-transparent
+        hover:text-cod-gray
+      `,
+    },
+  },
+  defaultVariants: {
+    size: 'default',
+    buttonStyle: 'default',
+  },
+});
+
+type ButtonProps = ComponentProps<'button'> & VariantProps<typeof button>;
 
 interface ButtonComponentProps extends ButtonProps {
   submit?: boolean
-  dark?: boolean
 }
 
-function Button({ ...props }: ButtonComponentProps) {
+function Button({
+  size, buttonStyle, className, ...props
+}: ButtonComponentProps) {
   return (
     <button
-      data-dark={props.dark}
       type={props.submit ? 'submit' : 'button'}
-      className="
-        mt-10
-        h-16
-        w-[245px]
-        border-[1px]
-        border-white
-        text-lg
-        uppercase
-        duration-300
-        hover:border-none
-        hover:bg-white
-        hover:text-black
-        data-[dark=true]:border-none
-        data-[dark=true]:bg-cod-gray
-        data-[dark=true]:hover:border-cod-gray
-        data-[dark=true]:hover:bg-white
-      "
+      className={button({
+        size, buttonStyle, className,
+      })}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     />
@@ -37,7 +58,6 @@ function Button({ ...props }: ButtonComponentProps) {
 
 Button.defaultProps = {
   submit: 'false',
-  dark: 'false',
 };
 
 export default Button;

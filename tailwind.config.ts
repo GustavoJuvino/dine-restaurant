@@ -23,6 +23,10 @@ const config: Config = {
         'body-2': ['20px', { fontWeight: '400', lineHeight: '30px' }],
         base: ['16px', { fontWeight: '400', lineHeight: '26px' }],
       },
+      screens: {
+        mobile: '400px',
+        'small-mobile': '282px',
+      },
     },
   },
   plugins: [],
