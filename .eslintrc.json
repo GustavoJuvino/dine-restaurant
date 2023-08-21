@@ -1,9 +1,10 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals", "airbnb", "airbnb/hooks", "plugin:tailwindcss/recommended"],
+  "extends": ["next/core-web-vitals", "airbnb", "airbnb/hooks", "airbnb-typescript", "plugin:tailwindcss/recommended"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
     "global-require": 0 ,
+    "linebreak-style": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    
   }
 }
