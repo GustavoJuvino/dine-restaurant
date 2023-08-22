@@ -13,6 +13,7 @@ function MainContainer() {
         h-[992px]
         w-full
         flex-col
+        overflow-x-hidden
         bg-cod-gray
         px-6
         pt-[24rem]

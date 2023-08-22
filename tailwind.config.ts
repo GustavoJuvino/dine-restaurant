@@ -23,6 +23,9 @@ const config: Config = {
         'body-2': ['20px', { fontWeight: '400', lineHeight: '30px' }],
         base: ['16px', { fontWeight: '400', lineHeight: '26px' }],
       },
+      boxShadow: {
+        '3xl': '0 75px 100px -50px  rgba(56, 66, 85, 0.50)',
+      },
       screens: {
         mobile: '400px',
         'small-mobile': '282px',

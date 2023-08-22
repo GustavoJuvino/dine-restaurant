@@ -7,7 +7,8 @@ export default function Home() {
   return (
     <main>
       <MainContainer />
-      <Rectangle />
+      <Rectangle className="left-0 mt-[100px] rounded-tr-[100px] md:mt-[250px]" />
+      <Rectangle className="right-0 mt-[1091px] rounded-tl-[100px]" />
       <Characteristics />
     </main>
   );
