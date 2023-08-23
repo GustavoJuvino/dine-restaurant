@@ -3,12 +3,12 @@ import React from 'react';
 import FarmImage from 'public/assets/homepage/enjoyable-place-desktop@2x.jpg';
 import FarmResponsiveImage from 'public/assets/homepage/enjoyable-place-tablet@2x.jpg';
 import LocallyImage from 'public/assets/homepage/locally-sourced-desktop@2x.jpg';
-// import LocallyResponsiveImage from 'public/assets/homepage/locally-sourced-tablet@2x.jpg';
+import LocallyResponsiveImage from 'public/assets/homepage/locally-sourced-tablet@2x.jpg';
 import { PatternDivide, PatternLines } from '../../../public/assets/svgs';
 
 function Characteristics() {
   return (
-    <section className="flex h-auto w-full flex-col items-center gap-y-32">
+    <section className="flex h-auto w-full flex-col items-center gap-y-[118px] md:gap-y-32">
       <section className="
           relative
           flex
@@ -27,7 +27,17 @@ function Characteristics() {
             height={1440}
             alt="characteristic-image"
             src={FarmImage}
-            className="absolute top-[-4.5rem] z-50 h-[720px] w-[400px] object-cover shadow-3xl max-md:hidden xl:w-[540px]"
+            className="
+              absolute
+              top-[-4.5rem]
+              z-50
+              h-[720px]
+              w-[400px]
+              object-cover
+              shadow-3xl
+              max-md:hidden
+              xl:w-[540px]
+            "
           />
 
           <Image
@@ -35,7 +45,18 @@ function Characteristics() {
             height={720}
             alt="characteristic-responsive-image"
             src={FarmResponsiveImage}
-            className="absolute top-[-8.5rem] h-[400px] w-[327px] object-cover shadow-3xl sm:top-[-8rem] sm:h-[360px] sm:w-[573px] md:hidden"
+            className="
+              absolute
+              top-[-8.5rem]
+              h-[400px]
+              w-[327px]
+              object-cover
+              shadow-3xl
+              sm:top-[-8rem]
+              sm:h-[360px]
+              sm:w-[573px]
+              md:hidden
+            "
           />
         </div>
 
@@ -54,7 +75,9 @@ function Characteristics() {
           "
         >
           <PatternDivide />
-          <h1 className="mb-[27px] mt-[55px] text-[32px] font-bold text-ebony-clay sm:text-5xl"> Enjoyable place for all the family</h1>
+          <h1 className="mb-[27px] mt-[55px] text-[32px] font-bold text-ebony-clay sm:text-5xl">
+            Enjoyable place for all the family
+          </h1>
           <p className="text-base text-ebony-clay sm:text-body-2">
             Our relaxed surroundings make dining with us a great
             experience for everyone. We can even arrange a tour
@@ -64,13 +87,14 @@ function Characteristics() {
       </section>
 
       <section className="
-          mt-[12rem]
           flex
           w-full
-          flex-row-reverse
           items-center
           justify-between
           max-xl:px-6
+          max-md:flex-col
+          md:mt-[12rem]
+          md:flex-row-reverse
           xl:w-[1110px]
         "
       >
@@ -80,12 +104,47 @@ function Characteristics() {
             height={1440}
             alt="characteristic-image"
             src={LocallyImage}
-            className="h-[720px] w-[400px] shadow-3xl xl:h-[720px] xl:w-[540px]"
+            className="h-[720px] w-[400px] shadow-3xl max-md:hidden xl:h-[720px] xl:w-[540px]"
           />
-          {/* <PatternLines className="absolute right-[-7.5rem] top-0 w-fit" /> */}
+          <Image
+            width={1146}
+            height={720}
+            alt="characteristic-responsive-image"
+            src={LocallyResponsiveImage}
+            className="
+              h-[400px]
+              w-[327px]
+              object-cover
+              shadow-3xl
+              sm:top-[-8rem]
+              sm:h-[360px]
+              sm:w-[573px]
+              md:hidden
+            "
+          />
+          <PatternLines className="
+              absolute
+              right-[-3.5rem]
+              top-[228px]
+              md:right-[-5rem]
+              md:top-[282px]
+              xl:right-[-7.5rem]
+            "
+          />
         </div>
 
-        <div className="sm:w-[457px] md:w-[40%] lg:w-[445px]">
+        <div className="
+            flex
+            w-[75%]
+            flex-col
+            max-md:mt-14
+            max-md:items-center
+            max-md:text-center
+            sm:w-[457px]
+            md:w-[40%]
+            lg:w-[445px]
+          "
+        >
           <PatternDivide />
           <h1 className="mb-[27px] mt-[55px] text-[32px] font-bold text-ebony-clay sm:text-5xl">
             The most locally sourced food
