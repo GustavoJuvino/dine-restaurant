@@ -1,12 +1,20 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import FarmImage from 'public/assets/homepage/enjoyable-place-desktop@2x.jpg';
 import FarmResponsiveImage from 'public/assets/homepage/enjoyable-place-tablet@2x.jpg';
 import LocallyImage from 'public/assets/homepage/locally-sourced-desktop@2x.jpg';
 import LocallyResponsiveImage from 'public/assets/homepage/locally-sourced-tablet@2x.jpg';
+// import { useInView } from 'react-intersection-observer';
 import { PatternDivide, PatternLines } from '../../../public/assets/svgs';
 
 function Characteristics() {
+  // const { ref, inView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.5,
+  // });
+
   return (
     <section className="flex h-auto w-full flex-col items-center gap-y-[118px] md:gap-y-32">
       <section className="
@@ -27,6 +35,8 @@ function Characteristics() {
             height={1440}
             alt="characteristic-image"
             src={FarmImage}
+            placeholder="blur"
+            priority
             className="
               absolute
               top-[-4.5rem]
@@ -45,6 +55,8 @@ function Characteristics() {
             height={720}
             alt="characteristic-responsive-image"
             src={FarmResponsiveImage}
+            placeholder="blur"
+            priority
             className="
               absolute
               top-[-8.5rem]
@@ -104,18 +116,21 @@ function Characteristics() {
             height={1440}
             alt="characteristic-image"
             src={LocallyImage}
-            className="h-[720px] w-[400px] shadow-3xl max-md:hidden xl:h-[720px] xl:w-[540px]"
+            placeholder="blur"
+            priority
+            className="h-[720px] w-[400px] max-md:hidden xl:h-[720px] xl:w-[540px]"
           />
           <Image
             width={1146}
             height={720}
             alt="characteristic-responsive-image"
             src={LocallyResponsiveImage}
+            placeholder="blur"
+            priority
             className="
               h-[400px]
               w-[327px]
               object-cover
-              shadow-3xl
               sm:top-[-8rem]
               sm:h-[360px]
               sm:w-[573px]

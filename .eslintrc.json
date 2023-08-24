@@ -1,12 +1,12 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals", "airbnb", "airbnb/hooks", "airbnb-typescript", "plugin:tailwindcss/recommended"],
+  "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript", "plugin:tailwindcss/recommended"],
   "rules": {
     "global-require": 0 ,
     "linebreak-style": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   },
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.json"]
   }
 }

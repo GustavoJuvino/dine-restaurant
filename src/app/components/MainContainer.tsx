@@ -71,6 +71,7 @@ function MainContainer() {
           alt="bg-main-responsive-image"
           src={MainResponsiveImage}
           placeholder="blur"
+          priority
           className="absolute left-0 top-0 h-full w-full object-cover object-center md:hidden"
         />
       </section>

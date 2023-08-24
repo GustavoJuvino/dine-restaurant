@@ -24,7 +24,7 @@ const config: Config = {
         base: ['16px', { fontWeight: '400', lineHeight: '26px' }],
       },
       boxShadow: {
-        '3xl': '0 75px 100px -50px  rgba(56, 66, 85, 0.50)',
+        '3xl': '0 60px 100px -50px  rgba(56, 66, 85, 0.50)',
       },
       screens: {
         mobile: '400px',
