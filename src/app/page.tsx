@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <MainContainer />
       <Rectangle className="left-0 mt-[100px] rounded-tr-[100px] md:mt-[250px]" />
-      <Rectangle className="right-0 mt-[1091px] rounded-tl-[100px]" />
+      <Rectangle className="right-0 mt-[1170px] rounded-tl-[100px] md:mt-[1091px]" />
       <Characteristics />
       <Highlights />
     </main>
