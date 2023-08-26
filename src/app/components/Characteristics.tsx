@@ -73,7 +73,7 @@ function Characteristics() {
         </div>
 
         <div className="
-            mt-[268px]
+            mt-[321px]
             flex
             w-[75%]
             flex-col
@@ -118,7 +118,7 @@ function Characteristics() {
             src={LocallyImage}
             placeholder="blur"
             priority
-            className="h-[720px] w-[400px] max-md:hidden xl:h-[720px] xl:w-[540px]"
+            className="relative bottom-[-5rem] z-50 h-[720px] w-[400px] max-md:hidden xl:h-[720px] xl:w-[540px]"
           />
           <Image
             width={1146}
@@ -141,6 +141,7 @@ function Characteristics() {
               absolute
               right-[-3.5rem]
               top-[228px]
+              z-[60]
               md:right-[-5rem]
               md:top-[282px]
               xl:right-[-7.5rem]

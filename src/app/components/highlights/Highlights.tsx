@@ -4,16 +4,19 @@ import HighlightsItems from './HighlightsItems';
 
 const recipes = [
   {
+    key: 1,
     name: 'Seared Salmon Fillet',
     description: 'Our locally sourced salmon served \n with a refreshing buckwheat summer salad.',
     src: 'salmon',
   },
   {
+    key: 2,
     name: 'Rosemary Filet Mignon',
     description: 'Our prime beef served to your taste with a delicious \n choice of seasonal sides.',
     src: 'beef',
   },
   {
+    key: 3,
     name: 'Summer Fruit Chocolate Mousse',
     description: 'Creamy mousse combined with summer fruits and \n dark chocolate shavings.',
     src: 'chocolate',
@@ -65,7 +68,7 @@ function Highlights() {
 
         <section className="flex flex-col max-sm:mt-[85px] sm:mt-[54px] sm:gap-y-6">
           {recipes.map((recipe) => (
-            <div>
+            <div key={recipe.key}>
               <HighlightsItems
                 name={recipe.name}
                 description={recipe.description}
