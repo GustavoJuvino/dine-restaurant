@@ -13,12 +13,11 @@ const button = tv({
     mobile:text-lg
   `,
   variants: {
-    size: {
-      default: 'h-16 w-[145px]',
-    },
     buttonStyle: {
-      default: 'border-[1px] border-white hover:bg-white hover:text-black',
+      default: 'h-16 w-[145px] border-[1px] border-white hover:bg-white hover:text-black',
       dark: `
+        h-16
+        w-[245px]
         border-[1px]
         border-cod-gray
         bg-cod-gray
@@ -30,7 +29,6 @@ const button = tv({
     },
   },
   defaultVariants: {
-    size: 'default',
     buttonStyle: 'default',
   },
 });
@@ -42,13 +40,13 @@ interface ButtonComponentProps extends ButtonProps {
 }
 
 function Button({
-  size, buttonStyle, className, ...props
+  buttonStyle, className, ...props
 }: ButtonComponentProps) {
   return (
     <button
       type={props.submit ? 'submit' : 'button'}
       className={button({
-        size, buttonStyle, className,
+        buttonStyle, className,
       })}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
