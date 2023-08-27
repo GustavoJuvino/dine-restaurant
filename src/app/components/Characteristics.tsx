@@ -118,7 +118,16 @@ function Characteristics() {
             src={LocallyImage}
             placeholder="blur"
             priority
-            className="relative bottom-[-5rem] z-50 h-[720px] w-[400px] max-md:hidden xl:h-[720px] xl:w-[540px]"
+            className="
+              relative
+              bottom-[-5rem]
+              z-50
+              h-[720px]
+              w-[400px]
+              max-md:hidden
+              xl:h-[720px]
+              xl:w-[540px]
+            "
           />
           <Image
             width={1146}
