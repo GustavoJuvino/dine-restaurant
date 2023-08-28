@@ -54,8 +54,4 @@ function Button({
   );
 }
 
-Button.defaultProps = {
-  submit: 'false',
-};
-
 export default Button;

@@ -21,3 +21,11 @@ ul, li{
   padding: 0px;
   margin: 0px;
 }
+
+.underline-effect {
+  opacity: 100%;
+}
+
+.active {
+  display: block;
+}
