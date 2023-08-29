@@ -21,7 +21,7 @@ function EventImage({ src }: EventImageProps) {
         width={1080}
         height={1200}
         alt="event-image"
-        src={`/assets/homepage/${src}-desktop@2x.jpg`}
+        src={`/assets/eventsImages/${src}-desktop@2x.jpg`}
         className="
             h-[400px]
             w-[326px]

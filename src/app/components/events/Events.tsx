@@ -1,13 +1,46 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useToggleList from '@/app/hooks/useToggleList';
 import EventTexts from './EventTexts';
 import EventImage from './EventImage';
 
 const eventsContainers = ['family gathering', 'special events', 'social events'];
 
+const eventsData = [
+  {
+    src: 'family-gathering',
+    title: 'Family Gathering',
+    desription: `
+      We love catering for entire families. So please bring
+      everyone along for a special meal with your loved
+      ones. We’ll provide a memorable experience for all.
+    `,
+  },
+  {
+    src: 'special-events',
+    title: 'Special Events',
+    desription: `
+      Whether it’s a romantic dinner or special date you’re
+      celebrating with others we’ll look after you. We’ll be
+      sure to mark your special date with an unforgettable
+      meal.
+    `,
+  },
+  {
+    src: 'social-events',
+    title: 'Social Events',
+    desription: `
+      Are you looking to have a larger social event? No
+      problem! We’re more than happy to cater for big
+      parties. We’ll work with you to make your event a hit
+      with everyone.
+    `,
+  }
+]
+
 function Events() {
+  const [currentIndex, setCurrentIndex] = useState(0)
   const { toggleEffect } = useToggleList();
 
   useEffect(() => {
@@ -41,7 +74,7 @@ function Events() {
           xl:w-[1110px]
         "
       >
-        <EventImage src="family-gathering" />
+        <EventImage src={eventsData[currentIndex].src} />
 
         <section className="
             flex
@@ -54,12 +87,8 @@ function Events() {
           "
         >
           <EventTexts
-            title="Family Gathering"
-            description={`
-              We love catering for entire families. So please bring
-              everyone along for a special meal with your loved
-              ones. We’ll provide a memorable experience for all.
-            `}
+            title={eventsData[currentIndex].title}
+            description={eventsData[currentIndex].desription}
           />
 
           <ul
@@ -86,9 +115,11 @@ function Events() {
                 key={item}
                 tabIndex={0}
                 onClick={() => {
+                  setCurrentIndex(index)
                   toggleEffect(index, 'ul#eventsItems > div', 'underline-effect');
                 }}
                 onKeyDown={() => {
+                  setCurrentIndex(index)
                   toggleEffect(index, 'ul#eventsItems > div', 'underline-effect');
                 }}
                 className={`
@@ -105,7 +136,7 @@ function Events() {
                 `}
               >
                 <hr className="
-                    left-[-7.8rem]
+                    left-[-13.5rem]
                     z-10
                     hidden
                     h-[1px]
