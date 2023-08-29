@@ -4,7 +4,7 @@ import Characteristics from './components/Characteristics';
 import Rectangle from './components/Rectangle';
 import Highlights from './components/highlights/Highlights';
 import Events from './components/events/Events';
-import BookContainer from "./components/BookContainer";
+import BookContainer from './components/BookContainer';
 
 export default function Home() {
   return (

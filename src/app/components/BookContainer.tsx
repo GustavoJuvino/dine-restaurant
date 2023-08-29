@@ -1,42 +1,42 @@
-import React from 'react'
-import Button from "./Button"
-import Image from "next/image"
+import React from 'react';
+import Image from 'next/image';
+import Button from './Button';
 
-const BookContainer = () => {
+function BookContainer() {
   return (
     <section className="
-        mt-[124px]
-        sm:mt-[120px]
-        md:mt-40
-        flex
-        justify-center
-        items-center
-        w-full
-        h-[328px]
-        sm:h-[272px]
-        md:h-60
         relative
+        mt-[124px]
+        flex
+        h-[328px]
+        w-full
+        items-center
+        justify-center
         text-white
+        sm:mt-[120px]
+        sm:h-[272px]
+        md:mt-40
+        md:h-60
       "
     >
-      <Image 
+      <Image
         width={2880}
         height={1220}
         src="/assets/booking/hero-bg-desktop@2x.jpg"
         alt="booking-image"
-        className="w-full h-full object-cover object-left-top"
+        className="h-full w-full object-cover object-left-top"
       />
       <div className="
-          max-xl:px-6
-          max-md:text-center
-          w-full
-          xl:w-[1110px]
-          h-auto
-          items-center
-          flex
-          max-md:flex-col
-          justify-between
           absolute
+          flex
+          h-auto
+          w-full
+          items-center
+          justify-between
+          max-xl:px-6
+          max-md:flex-col
+          max-md:text-center
+          xl:w-[1110px]
         "
       >
         <h3 className="text-[32px] font-bold sm:text-5xl">
@@ -45,7 +45,7 @@ const BookContainer = () => {
         <Button>book a table</Button>
       </div>
     </section>
-  )
+  );
 }
 
-export default BookContainer
+export default BookContainer;
