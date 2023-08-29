@@ -136,7 +136,8 @@ function Events() {
                 `}
               >
                 <hr className="
-                    left-[-13.5rem]
+                    xl:left-[-14.5rem]
+                    left-[-7rem]
                     z-10
                     hidden
                     h-[1px]
@@ -151,9 +152,7 @@ function Events() {
             ))}
           </ul>
         </section>
-
       </section>
-
     </section>
   );
 }
