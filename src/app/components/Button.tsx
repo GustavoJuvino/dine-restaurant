@@ -9,7 +9,6 @@ const button = tv({
     uppercase
     duration-300
     max-mobile:tracking-[1.5px]
-    mobile:w-[245px]
     mobile:text-lg
   `,
   variants: {
@@ -27,9 +26,6 @@ const button = tv({
         hover:text-cod-gray
       `,
     },
-  },
-  defaultVariants: {
-    buttonStyle: 'default',
   },
 });
 
@@ -49,7 +45,6 @@ function Button({
       className={button({
         buttonStyle, className,
       })}
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     />
   );

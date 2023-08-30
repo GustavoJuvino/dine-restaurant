@@ -36,11 +36,11 @@ const eventsData = [
       parties. We’ll work with you to make your event a hit
       with everyone.
     `,
-  }
-]
+  },
+];
 
 function Events() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
   const { toggleEffect } = useToggleList();
 
   useEffect(() => {
@@ -115,11 +115,11 @@ function Events() {
                 key={item}
                 tabIndex={0}
                 onClick={() => {
-                  setCurrentIndex(index)
+                  setCurrentIndex(index);
                   toggleEffect(index, 'ul#eventsItems > div', 'underline-effect');
                 }}
                 onKeyDown={() => {
-                  setCurrentIndex(index)
+                  setCurrentIndex(index);
                   toggleEffect(index, 'ul#eventsItems > div', 'underline-effect');
                 }}
                 className={`
@@ -136,7 +136,6 @@ function Events() {
                 `}
               >
                 <hr className="
-                    xl:left-[-14.5rem]
                     left-[-7rem]
                     z-10
                     hidden
@@ -145,6 +144,7 @@ function Events() {
                     border-beaver
                     md:absolute
                     md:w-[95px]
+                    xl:left-[-14.5rem]
                   "
                 />
                 {item}

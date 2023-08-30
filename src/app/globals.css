@@ -29,3 +29,21 @@ ul, li{
 .active {
   display: block;
 }
+
+input::-webkit-input-placeholder {
+  color: #1111;
+  opacity: 50%;
+  
+}
+
+input::placeholder {
+  color: #111111;
+  opacity: 50%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
