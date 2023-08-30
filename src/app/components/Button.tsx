@@ -36,6 +36,7 @@ const button = tv({
 type ButtonProps = ComponentProps<'button'> & VariantProps<typeof button>;
 
 interface ButtonComponentProps extends ButtonProps {
+  // eslint-disable-next-line react/require-default-props
   submit?: boolean
 }
 
