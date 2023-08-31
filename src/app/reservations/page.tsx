@@ -53,7 +53,7 @@ function Reservations() {
             </div>
 
             <div className="absolute z-40 h-[585px] w-full max-sm:top-[28.5rem] sm:h-[545px] sm:w-[540px] max-lg:sm:top-[25.5rem] lg:right-0">
-              <div className="flex h-auto w-full flex-col bg-white p-12 shadow-3xl">
+              <div className="flex h-auto w-full flex-col bg-white p-4 shadow-3xl small-mobile:p-8 sm:p-12">
                 <ReservationForm />
                 <CounterPeople />
 

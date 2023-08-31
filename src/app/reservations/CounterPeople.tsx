@@ -18,7 +18,7 @@ function CounterPeople() {
       "
     >
       <Minus className="cursor-pointer" />
-      <h3 className="text-body-2 font-bold">
+      <h3 className="text-base font-bold mobile:text-body-2">
         4 people
       </h3>
       <Plus className="cursor-pointer" />

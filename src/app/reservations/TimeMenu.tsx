@@ -8,15 +8,16 @@ function TimeMenu() {
         relative
         flex
         h-[43px]
-        w-[97px]
+        w-auto
         items-center
         gap-x-[15px]
         border-b-[1px]
         border-[#8E8E8E]
         pb-[14px]
-        pl-4
         text-body-2
         uppercase
+        mobile:w-[97px]
+        mobile:pl-4
       "
     >
       <h4>AM</h4>
@@ -40,7 +41,7 @@ function TimeMenu() {
         "
       >
         <li className="relative flex items-center">
-          <Check className="absolute right-[2.375rem]" />
+          <Check className="absolute mobile:right-[2.375rem]" />
           <h4 className="cursor-pointer">AM</h4>
         </li>
         <li className="relative flex items-center">

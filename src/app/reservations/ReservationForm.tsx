@@ -1,19 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Form } from '../components/form';
 import TimeMenu from './TimeMenu';
+import Date from './Date';
 
 function ReservationForm() {
-  const [currentValue, setCurrentValue] = useState<number | string>(0);
-
-  function checkCurrentValue(value: number) {
-    if (value > 12) setCurrentValue(12);
-    else if (value < 10) setCurrentValue(`0${value}`);
-    else if (value > 9) setCurrentValue(`${value}`);
-    else setCurrentValue(value);
-  }
-
   return (
     <section className="flex flex-col gap-y-[34px]">
       <Form.Field>
@@ -30,52 +22,30 @@ function ReservationForm() {
         />
       </Form.Field>
 
-      <Form.Field>
-        <h4 className="text-body-2">
-          Pick a date
-        </h4>
-        <Form.Input
-          type="number"
-          placeholder="MM"
-          min={1}
-          max={12}
-          className="h-[43px] w-20"
-          onChange={(event) => checkCurrentValue(Number(event.target.value))}
-          value={currentValue === 0 ? 'MM' : currentValue}
-        />
-        {/* <Form.Input
-          type="month"
-          placeholder="MM"
-          className="h-[43px] w-20"
-        /> */}
-        <Form.Input
-          type="number"
-          placeholder="DD"
-          className="h-[43px] w-20"
-        />
-        <Form.Input
-          type="number"
-          placeholder="YYYY"
-          className="h-[43px] w-20"
-        />
-      </Form.Field>
+      <Date />
 
-      <Form.Field>
-        <h4 className="text-body-2">
+      <Form.Field className="max-sm:flex-col max-sm:items-start">
+        <h4 className="text-body-2 max-sm:mb-2">
           Pick a time
         </h4>
-        <Form.Input
-          type="number"
-          placeholder="09"
-          className="h-[43px] w-20"
-        />
-        <Form.Input
-          type="number"
-          placeholder="00"
-          className="h-[43px] w-20"
-        />
+        <div className="flex max-mobile:gap-x-2 mobile:w-[289px] mobile:justify-between">
+          <Form.Input
+            type="number"
+            placeholder="09"
+            className="h-[43px] w-10 pl-0 mobile:w-20"
+            min={9}
+            max={23}
+          />
+          <Form.Input
+            type="number"
+            placeholder="00"
+            className="h-[43px] w-10 pl-0 mobile:w-20"
+            max={59}
+          />
 
-        <TimeMenu />
+          <TimeMenu />
+        </div>
+
       </Form.Field>
 
     </section>
