@@ -10,7 +10,8 @@ const input = tv({
     border-[#8E8E8E]
     pb-[14px]
     pl-4
-    text-body-2
+    text-[20px]
+    leading-[30px]
     text-cod-gray
     outline-none
   `,
@@ -22,6 +23,7 @@ type InputProps = ComponentProps<'input'> & VariantProps<typeof input>;
 
 export function Input({ className, ...props }: InputProps) {
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <input {...props} className={input({ className })} />
   );
 }

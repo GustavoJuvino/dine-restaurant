@@ -5,7 +5,7 @@ function CounterPeople() {
   return (
     <div
       className="
-        mt-[34px]
+        mt-9
         flex
         h-[41px]
         w-full

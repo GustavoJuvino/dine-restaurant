@@ -13,7 +13,7 @@ const button = tv({
   `,
   variants: {
     buttonStyle: {
-      default: 'h-16 w-[145px] border-[1px] border-white hover:bg-white hover:text-black',
+      default: 'h-16 w-[145px] border-[1px] border-white hover:bg-white hover:text-black sm:w-[245px]',
       dark: `
         h-16
         w-[245px]
@@ -26,6 +26,9 @@ const button = tv({
         hover:text-cod-gray
       `,
     },
+  },
+  defaultVariants: {
+    buttonStyle: 'default',
   },
 });
 
@@ -45,6 +48,7 @@ function Button({
       className={button({
         buttonStyle, className,
       })}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     />
   );

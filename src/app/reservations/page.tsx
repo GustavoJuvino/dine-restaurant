@@ -5,8 +5,8 @@ import {
 } from '../../../public/assets/svgs';
 import Rectangle from '../components/Rectangle';
 import Button from '../components/Button';
-import TimeMenu from './TimeMenu';
 import CounterPeople from './CounterPeople';
+import ReservationForm from './ReservationForm';
 
 function Reservations() {
   return (
@@ -53,130 +53,8 @@ function Reservations() {
             </div>
 
             <div className="absolute z-40 h-[585px] w-full max-sm:top-[28.5rem] sm:h-[545px] sm:w-[540px] max-lg:sm:top-[25.5rem] lg:right-0">
-              <div className="flex h-full w-full flex-col bg-white p-12 shadow-3xl">
-                <fieldset>
-                  <input
-                    id="input_1"
-                    type="text"
-                    placeholder="Name"
-                    className="
-                      w-full
-                      border-b-[1px]
-                      border-[#8E8E8E]
-                      pb-[14px]
-                      pl-4
-                      text-body-2
-                      text-cod-gray
-                      outline-none
-                    "
-                  />
-                </fieldset>
-                <fieldset className="mt-[34px]">
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="
-                      w-full
-                      border-b-[1px]
-                      border-[#8E8E8E]
-                      pb-[14px]
-                      pl-4
-                      text-body-2
-                      text-cod-gray
-                      outline-none
-                    "
-                  />
-                </fieldset>
-
-                <fieldset className=" mt-[34px] flex items-center justify-between">
-                  <h4 className="text-body-2">
-                    Pick a date
-                  </h4>
-                  <input
-                    type="number"
-                    placeholder="MM"
-                    className="
-                      h-[43px]
-                      w-20
-                      border-b-[1px]
-                      border-[#8E8E8E]
-                      pb-[14px]
-                      pl-4
-                      text-body-2
-                      text-cod-gray
-                      outline-none
-                    "
-                  />
-                  <input
-                    type="number"
-                    placeholder="DD"
-                    className="
-                      h-[43px]
-                      w-20
-                      border-b-[1px]
-                      border-[#8E8E8E]
-                      pb-[14px]
-                      pl-4
-                      text-body-2
-                      text-cod-gray
-                      outline-none
-                    "
-                  />
-                  <input
-                    type="number"
-                    placeholder="YYYY"
-                    className="
-                      h-[43px]
-                      w-[97px]
-                      border-b-[1px]
-                      border-[#8E8E8E]
-                      pb-[14px]
-                      pl-4
-                      text-body-2
-                      text-cod-gray
-                      outline-none
-                    "
-                  />
-                </fieldset>
-
-                <fieldset className="mt-[34px] flex items-center justify-between">
-                  <h4 className="text-body-2">
-                    Pick a time
-                  </h4>
-                  <input
-                    type="number"
-                    placeholder="09"
-                    className="
-                      h-[43px]
-                      w-20
-                      border-b-[1px]
-                      border-[#8E8E8E]
-                      pb-[14px]
-                      pl-4
-                      text-body-2
-                      text-cod-gray
-                      outline-none
-                    "
-                  />
-                  <input
-                    type="number"
-                    placeholder="00"
-                    className="
-                      h-[43px]
-                      w-20
-                      border-b-[1px]
-                      border-[#8E8E8E]
-                      pb-[14px]
-                      pl-4
-                      text-body-2
-                      text-cod-gray
-                      outline-none
-                    "
-                  />
-
-                  <TimeMenu />
-                </fieldset>
-
+              <div className="flex h-auto w-full flex-col bg-white p-12 shadow-3xl">
+                <ReservationForm />
                 <CounterPeople />
 
                 <Button buttonStyle="dark" className="mt-8 w-full">
