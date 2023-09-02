@@ -43,34 +43,6 @@ function Date() {
   // }
 
   return (
-  // <Form.Field className="max-sm:flex-col max-sm:items-start">
-  //   <h4 className="w-fit text-body-2 max-sm:mb-2">
-  //     Pick a date
-  //   </h4>
-  // <div className="flex w-full justify-between">
-  //   <Form.Input
-  //     type="number"
-  //     placeholder="MM"
-  //     min={1}
-  //     max={12}
-  //     className="h-[43px] w-20"
-  //   />
-  //   <Form.Input
-  //     type="number"
-  //     placeholder="DD"
-  //     min={1}
-  //     max={31}
-  //     className="h-[43px] w-20"
-  //   />
-  //   <Form.Input
-  //     type="number"
-  //     placeholder="YYYY"
-  //     min={2023}
-  //     className="h-[43px] w-20"
-  //   />
-  // </div>
-  // </Form.Field>
-
     <section className="justify-between sm:flex">
       <h4 className="text-body-2 max-sm:mb-2">
         Pick a date

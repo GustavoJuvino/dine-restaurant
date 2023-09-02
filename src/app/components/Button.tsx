@@ -36,7 +36,7 @@ type ButtonProps = ComponentProps<'button'> & VariantProps<typeof button>;
 
 interface ButtonComponentProps extends ButtonProps {
   // eslint-disable-next-line react/require-default-props
-  submit?: boolean
+  submit?: string
 }
 
 function Button({
@@ -48,7 +48,6 @@ function Button({
       className={button({
         buttonStyle, className,
       })}
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     />
   );

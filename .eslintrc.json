@@ -5,6 +5,7 @@
     "import/prefer-default-export": "off",
     "global-require": 0 ,
     "linebreak-style": 0,
+    "react/jsx-props-no-spreading": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   },
   "parserOptions": {
