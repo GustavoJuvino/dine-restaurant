@@ -54,20 +54,20 @@ function Date() {
           placeholder="MM"
           min={1}
           max={12}
-          className="h-[43px] w-10 pl-0 mobile:w-20"
+          className="h-[43px] w-10 pl-4 mobile:w-20"
         />
         <Form.Input
           type="number"
           placeholder="DD"
           min={1}
           max={31}
-          className="h-[43px] w-10 pl-0 mobile:w-20"
+          className="h-[43px] w-10 pl-4 mobile:w-20"
         />
         <Form.Input
           type="number"
           placeholder="YYYY"
           min={2023}
-          className="h-[43px] w-11 pl-0 mobile:w-20"
+          className="h-[43px] w-11 pl-4 mobile:w-20"
         />
       </div>
 

@@ -38,7 +38,7 @@ export function Input({
     <input
       {...props}
       {...register(name !== undefined ? name : ' ')}
-      className={input({ className })}
+      className={`${input({ className })} ${error ? 'active_error' : ''}`}
     />
   );
 }

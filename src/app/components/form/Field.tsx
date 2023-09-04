@@ -13,7 +13,6 @@ type FieldProps = ComponentProps<'fieldset'> & VariantProps<typeof field>;
 
 export function Field({ className, ...props }: FieldProps) {
   return (
-  // eslint-disable-next-line react/jsx-props-no-spreading
     <fieldset {...props} className={field({ className })} />
   );
 }

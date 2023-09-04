@@ -41,6 +41,14 @@ input::placeholder {
   opacity: 50%;
 }
 
+.active_error::placeholder {
+  color: #B54949;
+}
+
+.active_error {
+  border-bottom: 1px solid #B54949;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
