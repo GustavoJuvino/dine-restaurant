@@ -1,7 +1,12 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Arrow, Check } from '../../../public/assets/svgs';
 
 function TimeMenu() {
+  const [openMenu, setOpenMenu] = useState(true);
+  const [period, setPeriod] = useState('am');
+
   return (
     <div
       className="
@@ -20,34 +25,59 @@ function TimeMenu() {
         mobile:pl-4
       "
     >
-      <h4>AM</h4>
-      <Arrow className="cursor-pointer" />
+      <h4 className="uppercase">{period}</h4>
+      <Arrow
+        tabIndex={0}
+        className={`cursor-pointer outline-none duration-300 ${openMenu ? 'rotate-180' : 'rotate-0'}`}
+        onClick={() => setOpenMenu(!openMenu)}
+        onKeyDown={(e: KeyboardEvent) => e.key === 'Enter' && setOpenMenu(!openMenu)}
+      />
 
-      <ul
-        className="
-          absolute
-          left-0
-          top-[3.2rem]
-          z-50
-          hidden
-          h-[103px]
-          w-[106px]
-          flex-col
-          items-center
-          gap-y-4
-          bg-white
-          pt-[18px]
-          shadow-2xl
-        "
-      >
-        <li className="relative flex items-center">
-          <Check className="absolute mobile:right-[2.375rem]" />
-          <h4 className="cursor-pointer">AM</h4>
-        </li>
-        <li className="relative flex items-center">
-          <h4 className="cursor-pointer">PM</h4>
-        </li>
-      </ul>
+      {openMenu && (
+        <ul
+          className="
+            absolute
+            left-0
+            top-[3.2rem]
+            z-50
+            flex
+            h-[103px]
+            w-[106px]
+            flex-col
+            items-center
+            gap-y-4
+            bg-white
+            pt-[18px]
+            shadow-2xl
+          "
+        >
+          <li className="relative flex items-center">
+            {period === 'am' ? <Check className="absolute mobile:right-[2.375rem]" /> : ''}
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => setPeriod('am')}
+              onKeyDown={(e) => e.key === 'Enter' && setPeriod('am')}
+              className="cursor-pointer"
+            >
+              AM
+            </div>
+          </li>
+          <li className="relative flex items-center">
+            {period === 'pm' ? <Check className="absolute mobile:right-[2.375rem]" /> : ''}
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => setPeriod('pm')}
+              onKeyDown={(e) => e.key === 'Enter' && setPeriod('pm')}
+              className="cursor-pointer"
+            >
+              PM
+            </div>
+          </li>
+        </ul>
+      )}
+
     </div>
   );
 }

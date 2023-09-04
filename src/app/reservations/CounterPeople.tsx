@@ -1,7 +1,11 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Minus, Plus } from '../../../public/assets/svgs';
 
 function CounterPeople() {
+  const [people, setPeople] = useState(4);
+
   return (
     <div
       className="
@@ -19,7 +23,7 @@ function CounterPeople() {
     >
       <Minus className="cursor-pointer" />
       <h3 className="text-base font-bold mobile:text-body-2">
-        4 people
+        {`${4} people`}
       </h3>
       <Plus className="cursor-pointer" />
     </div>
