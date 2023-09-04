@@ -24,7 +24,8 @@ type InputStyleProps = ComponentProps<'input'> & VariantProps<typeof input>;
 
 interface InputProps extends InputStyleProps {
   name: string
-  error: string | undefined
+  // eslint-disable-next-line react/require-default-props
+  error?: string | undefined
 }
 
 export function Input({
@@ -32,12 +33,10 @@ export function Input({
 }: InputProps) {
   const { register } = useFormContext();
 
-  if (error) console.log(error);
-
   return (
     <input
+      {...register(name)}
       {...props}
-      {...register(name !== undefined ? name : ' ')}
       className={`${input({ className })} ${error ? 'active_error' : ''}`}
     />
   );

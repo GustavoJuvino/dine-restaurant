@@ -6,21 +6,25 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form } from '../components/form';
 import TimeMenu from './TimeMenu';
-import Date from './Date';
 import Button from '../components/Button';
 import CounterPeople from './CounterPeople';
+import DateInputs from './DateInputs';
 
 const ReservationsFormSchema = z.object({
   name: z.string().nonempty('This field is required'),
   email: z.string()
     .nonempty('This field is required')
     .email('Email format is invalid'),
-  hourAM: z.string()
-    .nonempty('This field is incomplete')
-    .min(9, 'The minimum time is from 9 am')
-    .max(12, 'The maximum time is untill 11 am'),
-  hourPM: z.string()
+  hour: z.string()
     .nonempty('This field is incomplete'),
+  minute: z.string()
+    .nonempty('This field is incomplete'),
+  month: z.string()
+    .nonempty('Month is required'),
+  day: z.string()
+    .nonempty('Day is required'),
+  year: z.string()
+    .nonempty('Year is required'),
 
 });
 
@@ -35,6 +39,12 @@ function ReservationForm() {
     handleSubmit,
     formState: { errors },
   } = createReservationForm;
+
+  const dateErrors = [
+    errors.month?.message,
+    errors.day?.message,
+    errors.year?.message,
+  ];
 
   return (
     <section className="flex h-auto w-full flex-col bg-white p-4 shadow-3xl small-mobile:p-8 sm:p-12">
@@ -64,17 +74,16 @@ function ReservationForm() {
             )}
           </Form.Field>
 
-          <Date />
+          <DateInputs errors={dateErrors} />
 
           <Form.Field className="max-sm:flex-col max-sm:items-start">
             <div>
-              <h4 className={`text-body-2 max-sm:mb-2 ${errors.hourPM ? 'text-red-500' : 'text-black'}`}>
-                Pick a time
+              <h4 className={`text-body-2 max-sm:mb-2 ${errors.hour ? 'text-red-500' : 'text-black'}`}>
+                Pick a hour
               </h4>
-              {errors.hourPM && (
-                <Form.Error className="pl-0">
-                  {errors.hourPM.message}
-                </Form.Error>
+              <Form.Error className="pl-0">{errors.hour?.message}</Form.Error>
+              {!errors.hour && (
+                <Form.Error className="pl-0">{errors.minute?.message}</Form.Error>
               )}
             </div>
 
@@ -82,18 +91,19 @@ function ReservationForm() {
               <Form.Input
                 type="number"
                 placeholder="09"
-                name="hourPM"
-                error={errors.hourPM?.message}
-                className="h-[43px] w-10 pl-0 mobile:w-20"
+                name="hour"
                 min={9}
                 max={12}
+                error={errors.hour?.message}
+                className="h-[43px] w-10 pl-0 mobile:w-20"
               />
               <Form.Input
                 type="number"
                 placeholder="00"
-                className="h-[43px] w-10 pl-0 mobile:w-20"
-                max={59}
                 name="minute"
+                max={59}
+                error={errors.minute?.message}
+                className="h-[43px] w-10 pl-0 mobile:w-20"
               />
 
               <TimeMenu />
