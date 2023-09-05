@@ -1,15 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { z } from 'zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { ToastContainer, toast } from 'react-toastify';
 import { Form } from '../components/form';
 import TimeMenu from './TimeMenu';
 import Button from '../components/Button';
 import CounterPeople from './CounterPeople';
 import DateInputs from './DateInputs';
 import { useGlobalContext } from '../context/store';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ReservationsFormSchema = z.object({
   name: z.string().nonempty('This field is required'),
@@ -48,15 +50,26 @@ function ReservationForm() {
     errors.year?.message,
   ];
 
+  useMemo(() => {
+    if (Object.keys(errors).length > 0) toast.error('Something went wrong :(');
+  }, [errors]);
+
   return (
     <section className="flex h-auto w-full flex-col bg-white p-4 shadow-3xl small-mobile:p-8 sm:p-12">
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        theme="dark"
+      />
       <FormProvider {...createReservationForm}>
         <form
+          id="reservation_form"
           onSubmit={handleSubmit((data) => {
             if (data) {
               // eslint-disable-next-line no-param-reassign
               data.people = people;
-              // console.log(data); -- If you want to see the reservation data, disable this.
+              toast.success('Reservation made successfully !');
+              // console.log(data); -- If you want to see the reservation data, discomment this.
             }
           })}
           className="flex flex-col gap-y-[34px]"

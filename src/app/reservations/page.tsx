@@ -48,10 +48,27 @@ function Reservations() {
                     number below. We’ll be happy to accommodate you.
               `}
               </p>
-              <Button className="max-sm:w-auto max-sm:px-4 sm:hidden"> Reserve a place </Button>
+              <a href="#reservation_form">
+                <Button className="max-sm:w-auto max-sm:px-4 sm:hidden">
+                  Reserve a place
+                </Button>
+              </a>
+
             </div>
 
-            <div className="absolute z-40 h-[585px] w-full max-sm:top-[28.5rem] sm:h-[545px] sm:w-[540px] max-lg:sm:top-[25.5rem] lg:right-0">
+            <div
+              className="
+                absolute
+                z-40
+                h-[585px]
+                w-full
+                max-sm:top-[28.5rem]
+                sm:h-[545px]
+                sm:w-[540px]
+                max-lg:sm:top-[25.5rem]
+                lg:right-0
+              "
+            >
               <ReservationForm />
               <PatternLines className="absolute bottom-[-2.5rem] left-[-5rem] z-[-10] max-lg:hidden" />
             </div>
