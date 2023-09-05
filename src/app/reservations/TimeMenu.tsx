@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import { Arrow, Check } from '../../../public/assets/svgs';
+import { useGlobalContext } from '../context/store';
 
 function TimeMenu() {
-  const [openMenu, setOpenMenu] = useState(true);
-  const [period, setPeriod] = useState('am');
+  const [openMenu, setOpenMenu] = useState(false);
+  const { period, setPeriod } = useGlobalContext();
 
   return (
     <div

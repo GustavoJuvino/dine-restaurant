@@ -55,3 +55,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+#display_count, button, img[alt~="booking-image"] {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

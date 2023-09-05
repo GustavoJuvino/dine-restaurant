@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 // eslint-disable-next-line camelcase
 import { League_Spartan } from 'next/font/google';
 import React from 'react';
-import Footer from "./components/Footer";
+import Footer from './components/Footer';
+import { GlobalContextProvider } from './context/store';
 
 const leagueSpartan = League_Spartan({ weight: ['700', '600', '400', '300'], subsets: ['latin'] });
 
@@ -18,11 +19,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={leagueSpartan.className}>
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <GlobalContextProvider>
+      <html lang="en">
+        <body className={leagueSpartan.className}>
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </GlobalContextProvider>
   );
 }

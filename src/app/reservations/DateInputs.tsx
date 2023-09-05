@@ -48,7 +48,7 @@ function DateInputs({ errors } : DateInputsProps) {
   return (
     <section className="justify-between sm:flex">
       <div>
-        <h4 className={`text-body-2 max-sm:mb-2 ${filteredErrors.length ? 'text-red-500' : 'text-black'}`}>
+        <h4 className={`text-body-2 max-sm:mb-2 ${filteredErrors.length ? 'text-red-700' : 'text-black'}`}>
           Pick a date
         </h4>
         {filteredErrors.length ? (

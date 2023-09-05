@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Minus, Plus } from '../../../public/assets/svgs';
+import { useGlobalContext } from '../context/store';
 
 function CounterPeople() {
-  const [people, setPeople] = useState(4);
+  const { people, setPeople } = useGlobalContext();
 
   return (
     <div
@@ -21,11 +22,17 @@ function CounterPeople() {
         pb-4
       "
     >
-      <Minus className="cursor-pointer" />
-      <h3 className="text-base font-bold mobile:text-body-2">
-        {`${4} people`}
+      <Minus
+        className="cursor-pointer"
+        onClick={() => setPeople(people > 1 ? people - 1 : 1)}
+      />
+      <h3 id="display_count" className="text-body-2 font-bold max-mobile:text-base">
+        {people > 1 ? `${people} people` : `${people} person`}
       </h3>
-      <Plus className="cursor-pointer" />
+      <Plus
+        className="cursor-pointer"
+        onClick={() => setPeople(people + 1)}
+      />
     </div>
   );
 }

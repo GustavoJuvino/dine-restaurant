@@ -9,6 +9,7 @@ import TimeMenu from './TimeMenu';
 import Button from '../components/Button';
 import CounterPeople from './CounterPeople';
 import DateInputs from './DateInputs';
+import { useGlobalContext } from '../context/store';
 
 const ReservationsFormSchema = z.object({
   name: z.string().nonempty('This field is required'),
@@ -25,12 +26,13 @@ const ReservationsFormSchema = z.object({
     .nonempty('Day is required'),
   year: z.string()
     .nonempty('Year is required'),
-
+  people: z.number().optional(),
 });
 
 type ReservationsForm = z.infer<typeof ReservationsFormSchema>;
 
 function ReservationForm() {
+  const { period, people } = useGlobalContext();
   const createReservationForm = useForm<ReservationsForm>({
     resolver: zodResolver(ReservationsFormSchema),
   });
@@ -49,7 +51,16 @@ function ReservationForm() {
   return (
     <section className="flex h-auto w-full flex-col bg-white p-4 shadow-3xl small-mobile:p-8 sm:p-12">
       <FormProvider {...createReservationForm}>
-        <form onSubmit={handleSubmit((data) => console.log(data))} className="flex flex-col gap-y-[34px]">
+        <form
+          onSubmit={handleSubmit((data) => {
+            if (data) {
+              // eslint-disable-next-line no-param-reassign
+              data.people = people;
+              // console.log(data); -- If you want to see the reservation data, disable this.
+            }
+          })}
+          className="flex flex-col gap-y-[34px]"
+        >
           <Form.Field className="flex flex-col items-start">
             <Form.Input
               type="text"
@@ -78,7 +89,7 @@ function ReservationForm() {
 
           <Form.Field className="max-sm:flex-col max-sm:items-start">
             <div>
-              <h4 className={`text-body-2 max-sm:mb-2 ${errors.hour ? 'text-red-500' : 'text-black'}`}>
+              <h4 className={`text-body-2 max-sm:mb-2 ${errors.hour ? 'text-red-700' : 'text-black'}`}>
                 Pick a hour
               </h4>
               <Form.Error className="pl-0">{errors.hour?.message}</Form.Error>
@@ -92,7 +103,7 @@ function ReservationForm() {
                 type="number"
                 placeholder="09"
                 name="hour"
-                min={9}
+                min={period === 'am' ? 9 : 1}
                 max={12}
                 error={errors.hour?.message}
                 className="h-[43px] w-10 pl-0 mobile:w-20"
