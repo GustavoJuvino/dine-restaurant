@@ -8,6 +8,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -49,7 +50,6 @@ input::placeholder {
   border-bottom: 1px solid #B54949;
 }
 
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -60,4 +60,9 @@ input::-webkit-inner-spin-button {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+
+body::-webkit-scrollbar {
+  display: none;
 }

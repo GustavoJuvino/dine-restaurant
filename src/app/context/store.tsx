@@ -25,7 +25,7 @@ export function GlobalContextProvider({
 }: {
   children: React.ReactNode
 }) {
-  const [period, setPeriod] = useState('pm');
+  const [period, setPeriod] = useState('am');
   const [people, setPeople] = useState(4);
 
   return (

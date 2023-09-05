@@ -1,13 +1,20 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import MainImage from 'public/assets/homepage/hero-bg-desktop@2x.jpg';
 import MainResponsiveImage from 'public/assets/homepage/hero-bg-tablet@2x.jpg';
+import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 import Button from './Button';
 import { Logo, MobileLogo } from '../../../public/assets/svgs';
 
 function MainContainer() {
+  const router = useRouter();
+
   return (
-    <section className="
+    <section
+      className="
         relative
         flex
         h-[992px]
@@ -31,17 +38,33 @@ function MainContainer() {
       <MobileLogo className="z-50 sm:hidden" />
 
       <section className="flex w-full justify-between max-lg:flex-col">
-        <div className="z-50 mt-9 sm:mt-[38px] md:mt-[153px]">
-          <h1 className="text-[32px] font-light opacity-80 sm:text-5xl md:text-7xl">
-            Exquisite dining
-            <br />
-            since 1989
-          </h1>
-          <p className="mt-5 text-base opacity-80 sm:text-body-2 md:mt-[10px] md:w-[445px]">
-            Experience our seasonal menu in beautiful country surroundings.
-            Eat the freshest produce from the comfort of our farmhouse.
-          </p>
-          <Button> book a table </Button>
+        <div className="z-50 mt-9 sm:mt-[38px] md:mt-[153px] ">
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', delay: 0.2 }}
+          >
+            <h1 className="text-[32px] font-light opacity-80 sm:text-5xl md:text-7xl">
+              Exquisite dining
+              <br />
+              since 1989
+            </h1>
+            <p className="mt-5 text-base opacity-80 sm:text-body-2 md:mt-[10px] md:w-[445px]">
+              Experience our seasonal menu in beautiful country surroundings.
+              Eat the freshest produce from the comfort of our farmhouse.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', delay: 0.3 }}
+          >
+            <Button onClick={() => router.push('/reservations')}>
+              book a table
+            </Button>
+          </motion.div>
+
         </div>
 
         <Image

@@ -74,10 +74,10 @@ function Highlights() {
                 description={recipe.description}
                 src={recipe.src}
               />
-              {recipe.src === 'chocolate' ? '' : <hr className="mt-[54px] h-[1px] w-full bg-white opacity-[15%] max-sm:mb-6 sm:mt-6" />}
+              {recipe.src === 'chocolate' ? ''
+                : <hr className="mt-[54px] h-[1px] w-full bg-white opacity-[15%] max-sm:mb-6 sm:mt-6" />}
             </div>
           ))}
-
         </section>
       </section>
     </section>

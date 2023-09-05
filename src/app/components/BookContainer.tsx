@@ -1,8 +1,13 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import Button from './Button';
 
 function BookContainer() {
+  const router = useRouter();
+
   return (
     <section className="
         relative
@@ -42,7 +47,9 @@ function BookContainer() {
         <h3 className="text-[32px] font-bold sm:text-5xl">
           Ready to make a reservation?
         </h3>
-        <Button>book a table</Button>
+        <Button onClick={() => router.push('/reservations')}>
+          book a table
+        </Button>
       </div>
     </section>
   );
