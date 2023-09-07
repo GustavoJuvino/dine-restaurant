@@ -42,7 +42,7 @@ function MainContainer() {
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring', delay: 0.2 }}
+            transition={{ type: 'tween', delay: 0.2 }}
           >
             <h1 className="text-[32px] font-light opacity-80 sm:text-5xl md:text-7xl">
               Exquisite dining
@@ -58,7 +58,7 @@ function MainContainer() {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring', delay: 0.3 }}
+            transition={{ type: 'tween', delay: 0.3 }}
           >
             <Button onClick={() => router.push('/reservations')}>
               book a table

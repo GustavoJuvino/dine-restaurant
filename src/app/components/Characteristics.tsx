@@ -7,39 +7,59 @@ import FarmResponsiveImage from 'public/assets/homepage/enjoyable-place-tablet@2
 import LocallyImage from 'public/assets/homepage/locally-sourced-desktop@2x.jpg';
 import LocallyResponsiveImage from 'public/assets/homepage/locally-sourced-tablet@2x.jpg';
 import { InView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import { PatternDivide, PatternLines } from '../../../public/assets/svgs';
 
 function Characteristics() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.5,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'tween' },
+    },
+  };
+
   return (
-    <section
-      className="
-        flex
-        h-auto
-        w-full
-        flex-col
-        items-center
-        gap-y-[118px]
-        md:gap-y-32
-      "
-    >
-      <InView triggerOnce threshold={0.5}>
-        {({ inView, ref }) => (
-          <section
-            ref={ref}
-            className={`
-              relative
-              flex
-              w-full
-              items-center
-              justify-center
-              max-xl:px-6
-              max-md:flex-col
-              md:justify-between
-              xl:w-[1110px]
-              ${inView ? 'opacity-100' : 'opacity-0'}
-            `}
-          >
-            <div className="items-center justify-center max-md:flex">
+    <section className="flex h-auto w-full flex-col items-center gap-y-[118px] md:gap-y-32">
+      <section
+        className="
+          relative
+          flex
+          w-full
+          items-center
+          justify-center
+          max-xl:px-6
+          max-md:flex-col
+          md:justify-between
+          xl:w-[1110px]
+        "
+      >
+        <InView triggerOnce threshold={0.5}>
+          {({ inView, ref }) => (
+            <motion.div
+              ref={ref}
+              className="
+                items-center
+                justify-center
+                max-md:flex
+              "
+              initial={{ opacity: 0, marginLeft: '80px' }}
+              animate={inView && { opacity: 1, marginLeft: '0px' }}
+              transition={{ delay: 0.4 }}
+            >
               <Image
                 width={1080}
                 height={1440}
@@ -80,55 +100,76 @@ function Characteristics() {
                   md:hidden
                 "
               />
-            </div>
+            </motion.div>
+          )}
+        </InView>
 
-            <div className="
-                mt-[321px]
-                flex
-                w-[75%]
-                flex-col
-                max-md:items-center
-                max-md:text-center
-                sm:mt-[289px]
-                sm:w-[457px]
-                md:mt-[177px]
-                md:w-[40%]
-                lg:w-[445px]
-              "
-            >
-              <PatternDivide />
-              <h1 className="mb-[27px] mt-[55px] text-[32px] font-bold text-ebony-clay sm:text-5xl">
-                Enjoyable place for all the family
-              </h1>
-              <p className="text-base text-ebony-clay sm:text-body-2">
-                Our relaxed surroundings make dining with us a great
-                experience for everyone. We can even arrange a tour
-                of the farm before your meal.
-              </p>
-            </div>
-          </section>
-        )}
+        <motion.div
+          className="
+            mt-[321px]
+            flex
+            w-[75%]
+            flex-col
+            max-md:items-center
+            max-md:text-center
+            sm:mt-[289px]
+            sm:w-[457px]
+            md:mt-[177px]
+            md:w-[40%]
+            lg:w-[445px]
+          "
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.div variants={item}>
+            <PatternDivide />
+          </motion.div>
 
-      </InView>
-
-      <InView triggerOnce threshold={1}>
-        {({ inView, ref }) => (
-          <section
-            ref={ref}
-            className={`
-                  flex
-                  w-full
-                  items-center
-                  justify-between
-                  max-xl:px-6
-                  max-md:flex-col
-                  md:mt-[12rem]
-                  md:flex-row-reverse
-                  xl:w-[1110px]
-                  ${inView ? 'opacity-100' : 'opacity-0'}
-                `}
+          <motion.h1
+            variants={item}
+            className="
+              mb-[27px]
+              mt-[55px]
+              text-[32px]
+              font-bold
+              text-ebony-clay
+              sm:text-5xl
+            "
           >
-            <div className="relative z-50">
+            Enjoyable place for all the family
+          </motion.h1>
+          <motion.p variants={item} className="text-base text-ebony-clay sm:text-body-2">
+            Our relaxed surroundings make dining with us a great
+            experience for everyone. We can even arrange a tour
+            of the farm before your meal.
+          </motion.p>
+        </motion.div>
+      </section>
+
+      <section
+        className="
+          flex
+          w-full
+          items-center
+          justify-between
+          max-xl:px-6
+          max-md:flex-col
+          md:mt-[12rem]
+          md:flex-row-reverse
+          xl:w-[1110px]
+        "
+      >
+        <InView triggerOnce threshold={0.4}>
+          {({ inView, ref }) => (
+            <motion.div
+              ref={ref}
+              className="relative z-50"
+              initial={{ opacity: 0, marginRight: '80px' }}
+              animate={inView && { opacity: 1, marginRight: '0px' }}
+              transition={{ delay: 0.4 }}
+            >
               <Image
                 width={1080}
                 height={1440}
@@ -174,33 +215,50 @@ function Characteristics() {
                   xl:right-[-7.5rem]
                 "
               />
-            </div>
+            </motion.div>
+          )}
+        </InView>
 
-            <div className="
-                flex
-                w-[75%]
-                flex-col
-                max-md:mt-14
-                max-md:items-center
-                max-md:text-center
-                sm:w-[457px]
-                md:w-[40%]
-                lg:w-[445px]
-              "
-            >
-              <PatternDivide />
-              <h1 className="mb-[27px] mt-[55px] text-[32px] font-bold text-ebony-clay sm:text-5xl">
-                The most locally sourced food
-              </h1>
-              <p className="text-base text-ebony-clay sm:text-body-2">
-                All our ingredients come directly from our farm or
-                local fishery. So you can be sure that you’re eating
-                the freshest, most sustainable food.
-              </p>
-            </div>
-          </section>
-        )}
-      </InView>
+        <motion.div
+          className="
+            flex
+            w-[75%]
+            flex-col
+            max-md:mt-14
+            max-md:items-center
+            max-md:text-center
+            sm:w-[457px]
+            md:w-[40%]
+            lg:w-[445px]
+          "
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.div variants={item}>
+            <PatternDivide />
+          </motion.div>
+          <motion.h1
+            className="
+              mb-[27px]
+              mt-[55px]
+              text-[32px]
+              font-bold
+              text-ebony-clay
+              sm:text-5xl
+            "
+            variants={item}
+          >
+            The most locally sourced food
+          </motion.h1>
+          <motion.p variants={item} className="text-base text-ebony-clay sm:text-body-2">
+            All our ingredients come directly from our farm or
+            local fishery. So you can be sure that you’re eating
+            the freshest, most sustainable food.
+          </motion.p>
+        </motion.div>
+      </section>
 
     </section>
   );
