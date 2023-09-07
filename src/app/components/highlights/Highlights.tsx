@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import { PatternDivide } from '../../../../public/assets/svgs';
 import HighlightsItems from './HighlightsItems';
 
@@ -24,6 +27,27 @@ const recipes = [
 ];
 
 function Highlights() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.7,
+        staggerChildren: 0.7,
+        staggerDirection: 1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: -50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'tween' },
+    },
+  };
+
   return (
     <section className="
         flex
@@ -54,7 +78,18 @@ function Highlights() {
           xl:w-[1110px]
         "
       >
-        <div className="flex flex-col max-md:items-center max-md:text-center sm:w-[445px]">
+        <motion.div
+          className="
+            flex
+            flex-col
+            max-md:items-center
+            max-md:text-center
+            sm:w-[445px]
+          "
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ type: 'tween', delay: 0.6 }}
+        >
           <PatternDivide />
           <h2 className="mb-[13px] mt-9 text-[32px] font-bold sm:mt-[55px] sm:text-5xl md:mb-[27px]">
             A few highlights from our menu
@@ -64,11 +99,23 @@ function Highlights() {
             glimpse at some of our diner’s favourites. Our menu is
             revamped every season.
           </p>
-        </div>
+        </motion.div>
 
-        <section className="flex flex-col max-sm:mt-[85px] sm:mt-[54px] sm:gap-y-6">
+        <motion.section
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="
+            flex
+            flex-col
+            max-sm:mt-[85px]
+            sm:mt-[54px]
+            sm:gap-y-6
+          "
+        >
           {recipes.map((recipe) => (
-            <div key={recipe.key}>
+            <motion.div variants={item} key={recipe.key}>
               <HighlightsItems
                 name={recipe.name}
                 description={recipe.description}
@@ -76,9 +123,9 @@ function Highlights() {
               />
               {recipe.src === 'chocolate' ? ''
                 : <hr className="mt-[54px] h-[1px] w-full bg-white opacity-[15%] max-sm:mb-6 sm:mt-6" />}
-            </div>
+            </motion.div>
           ))}
-        </section>
+        </motion.section>
       </section>
     </section>
   );
