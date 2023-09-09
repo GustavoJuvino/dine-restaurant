@@ -8,6 +8,8 @@ import ReservationForm from './ReservationForm';
 import ReservationLogo from './ReservationLogo';
 import MainTexts from './MainTexts';
 
+export const metadata = { title: 'Reservations' };
+
 function Reservations() {
   return (
     <main className="max-sm:mb-[534px] max-lg:sm:mb-[435px]">
