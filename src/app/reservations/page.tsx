@@ -1,8 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {
-  MobileLogo, PatternLines,
-} from '../../../public/assets/svgs';
+import { PatternLines } from '../../../public/assets/svgs';
 import Rectangle from '../components/Rectangle';
 import ReservationForm from './ReservationForm';
 import ReservationLogo from './ReservationLogo';
@@ -29,8 +27,6 @@ function Reservations() {
           "
         >
           <ReservationLogo />
-          <MobileLogo className="mb-[44px] mt-14 sm:hidden" />
-
           <section className="
               flex
               w-full
