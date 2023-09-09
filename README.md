@@ -1,9 +1,9 @@
 <h1 align="center">🥘🥖Dine Restaurant</h1>
 
 <h4 align="center">
-    This project is a challenge that I took from <a href="https://www.frontendmentor.io/challenges/photosnap-multipage-website-nMDSrNmNW">frontendmentor.io </a> 
-    which consists of building a responsible restaurant website where you can make a reservation
-    through a great form.<br>
+    This project is a challenge that I took from <a href="https://www.frontendmentor.io/challenges/photosnap-multipage-website-nMDSrNmNW">frontendmentor.io </a><br>
+    which consists of building a responsible restaurant website<br>
+    where you can make a reservation through a great form.<br>
 </h4>
 <br>
 
