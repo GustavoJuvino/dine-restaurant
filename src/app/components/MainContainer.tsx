@@ -95,7 +95,16 @@ function MainContainer() {
           src={MainResponsiveImage}
           placeholder="blur"
           priority
-          className="absolute left-0 top-0 h-full w-full object-cover object-center md:hidden"
+          className="
+            absolute
+            left-0
+            top-0
+            h-full
+            w-full
+            object-cover
+            object-center
+            md:hidden
+          "
         />
       </section>
     </section>

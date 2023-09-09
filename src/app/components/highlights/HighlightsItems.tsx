@@ -12,13 +12,13 @@ function HighlightsItems({
 }: HighlightsItemsProps) {
   return (
     <div className="
-            flex
-            h-fit
-            gap-x-[30px]
-            max-sm:flex-col
-            max-sm:items-center
-            max-sm:text-center
-        "
+          flex
+          h-fit
+          gap-x-[30px]
+          max-sm:flex-col
+          max-sm:items-center
+          max-sm:text-center
+      "
     >
       <div className="flex">
         <Image

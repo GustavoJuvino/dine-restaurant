@@ -53,7 +53,7 @@ function TimeMenu() {
           "
         >
           <li className="relative flex items-center">
-            {period === 'am' ? <Check className="absolute mobile:right-[2.375rem]" /> : ''}
+            {period === 'am' ? <Check className="absolute right-[2.375rem]" /> : ''}
             <div
               role="button"
               tabIndex={0}

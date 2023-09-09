@@ -9,6 +9,7 @@
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {
@@ -62,10 +63,10 @@ input::-webkit-inner-spin-button {
   user-select: none;
 }
 
-
 body::-webkit-scrollbar {
   display: none;
 }
+
 
 .img-effect {
   display: block;

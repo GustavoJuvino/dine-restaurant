@@ -7,7 +7,7 @@ interface DateInputsProps {
   errors: (string | undefined)[]
 }
 
-function DateInputs({ errors } : DateInputsProps) {
+function DateInputs({ errors }: DateInputsProps) {
   const [currentMonth, setCurrentMonth] = useState<number>();
   const [currentDay, setCurrentDay] = useState<number>();
   const [currentYear, setCurrentYear] = useState<number>();
@@ -66,7 +66,7 @@ function DateInputs({ errors } : DateInputsProps) {
           max={12}
           name="month"
           error={errors[0]}
-          className="h-[43px] w-10 pl-4 mobile:w-20"
+          className="h-[43px] w-10 pl-0 mobile:w-20 mobile:pl-4"
         />
         <Form.Input
           type="number"
@@ -75,7 +75,7 @@ function DateInputs({ errors } : DateInputsProps) {
           max={maxDay}
           name="day"
           error={errors[1]}
-          className="h-[43px] w-10 pl-4 mobile:w-20"
+          className="h-[43px] w-10 pl-0 mobile:w-20 mobile:pl-4"
         />
         <Form.Input
           onChange={(e) => checkYearValue(+e.currentTarget.value)}
@@ -84,7 +84,7 @@ function DateInputs({ errors } : DateInputsProps) {
           min={2023}
           name="year"
           error={errors[2]}
-          className="h-[43px] w-11 pl-4 mobile:w-20"
+          className="h-[43px] w-11 pl-0 mobile:w-20 mobile:pl-4"
         />
       </div>
 
