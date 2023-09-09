@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ToastContainer, toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 import { Form } from '../components/form';
 import TimeMenu from './TimeMenu';
 import Button from '../components/Button';
@@ -55,7 +56,22 @@ function ReservationForm() {
   }, [errors]);
 
   return (
-    <section className="flex h-auto w-full flex-col bg-white p-4 shadow-3xl small-mobile:p-8 sm:p-12">
+    <motion.section
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ type: 'tween', duration: 0.35 }}
+      className="
+        flex
+        h-auto
+        w-full
+        flex-col
+        bg-white
+        p-4
+        shadow-3xl
+        small-mobile:p-8
+        sm:p-12
+      "
+    >
       <ToastContainer
         position="top-center"
         autoClose={3000}
@@ -143,7 +159,7 @@ function ReservationForm() {
 
         </form>
       </FormProvider>
-    </section>
+    </motion.section>
 
   );
 }

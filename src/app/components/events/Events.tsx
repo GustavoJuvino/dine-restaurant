@@ -107,6 +107,7 @@ function Events() {
           <div id="textContainer">
             {eventsData.map((data) => (
               <EventTexts
+                key={data.title}
                 title={data.title}
                 description={data.description}
               />

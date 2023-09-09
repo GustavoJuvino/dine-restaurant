@@ -4,9 +4,9 @@ import {
   MobileLogo, PatternLines,
 } from '../../../public/assets/svgs';
 import Rectangle from '../components/Rectangle';
-import Button from '../components/Button';
 import ReservationForm from './ReservationForm';
 import ReservationLogo from './ReservationLogo';
+import MainTexts from './MainTexts';
 
 function Reservations() {
   return (
@@ -38,24 +38,7 @@ function Reservations() {
               sm:flex
             "
           >
-            <div className="text-white max-lg:text-center">
-              <h1 className="text-[32px] font-light tracking-[-0.4px] sm:text-7xl">
-                Reservations
-              </h1>
-              <p className="text-base sm:whitespace-pre-line sm:text-body-2">
-                {`
-                    We can’t wait to host you. If you have any special
-                    requirements please feel free to call on the phone
-                    number below. We’ll be happy to accommodate you.
-              `}
-              </p>
-              <a href="#reservation_form">
-                <Button className="max-sm:w-auto max-sm:px-4 sm:hidden">
-                  Reserve a place
-                </Button>
-              </a>
-
-            </div>
+            <MainTexts />
 
             <div
               className="

@@ -16,8 +16,8 @@ function Characteristics() {
     show: {
       opacity: 1,
       transition: {
-        delay: 0.5,
-        staggerChildren: 0.5,
+        delay: 0.4,
+        staggerChildren: 0.4,
         staggerDirection: -1,
       },
     },

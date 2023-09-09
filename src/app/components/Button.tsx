@@ -13,7 +13,7 @@ const button = tv({
   `,
   variants: {
     buttonStyle: {
-      default: 'h-16 w-[145px] border-[1px] border-white hover:bg-white hover:text-black sm:w-[245px]',
+      default: 'h-16 w-[180px] border-[1px] border-white hover:bg-white hover:text-black small-mobile:w-[245px]',
       dark: `
         h-16
         w-[245px]

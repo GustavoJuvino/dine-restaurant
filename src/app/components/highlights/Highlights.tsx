@@ -32,8 +32,8 @@ function Highlights() {
     show: {
       opacity: 1,
       transition: {
-        delay: 0.7,
-        staggerChildren: 0.7,
+        delay: 0.3,
+        staggerChildren: 0.4,
         staggerDirection: 1,
       },
     },
@@ -88,7 +88,8 @@ function Highlights() {
           "
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ type: 'tween', delay: 0.6 }}
+          viewport={{ once: true }}
+          transition={{ type: 'tween', delay: 0.5 }}
         >
           <PatternDivide />
           <h2 className="mb-[13px] mt-9 text-[32px] font-bold sm:mt-[55px] sm:text-5xl md:mb-[27px]">
