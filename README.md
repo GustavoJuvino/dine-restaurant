@@ -1,15 +1,15 @@
 <h1 align="center">🥘🥖Dine Restaurant</h1>
 
 <h4 align="center">
-    This project is a challenge that I took from <a href="https://www.frontendmentor.io/challenges/photosnap-multipage-website-nMDSrNmNW">frontendmentor.io </a><br>
+    This project is a challenge that I took from <a href="https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7">frontendmentor.io </a><br>
     which consists of building a responsible restaurant website<br>
     where you can make a reservation through a great form.<br>
 </h4>
 <br>
 
 <h4 align="center">
-    <a align="center" href="https://www.frontendmentor.io/solutions/responsive-designo-website-project-using-react-next-and-tailwind-7-QAd_C_Na">Front-end mentor challenge.</a> //
-     <a align="center" href="https://designo-multi-page-website-hazel.vercel.app/">Audiophile Website</a>
+    <a align="center" href="https://www.frontendmentor.io/solutions/responsive-animated-dine-restaurant-UExuSoBmYK">Front-end mentor challenge.</a> //
+     <a align="center" href="https://dine-restaurant-blue.vercel.app//">Dine Restaurant</a>
 </h4>
 
 <br />
