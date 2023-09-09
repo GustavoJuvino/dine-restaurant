@@ -1,5 +1,6 @@
+'use client';
+
 import './globals.css';
-// eslint-disable-next-line camelcase
 import { League_Spartan } from 'next/font/google';
 import React from 'react';
 import Footer from './components/Footer';
