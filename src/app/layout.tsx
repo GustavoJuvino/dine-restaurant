@@ -1,5 +1,3 @@
-'use client';
-
 import './globals.css';
 import { League_Spartan } from 'next/font/google';
 import React from 'react';
