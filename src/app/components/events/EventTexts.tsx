@@ -13,7 +13,7 @@ function EventTexts({ title, description }: EventTextsProps) {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="hidden">
       <h2 className="text-[32px] font-bold text-ebony-clay max-md:mt-12 sm:text-5xl">
         {title}
       </h2>

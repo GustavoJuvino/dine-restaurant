@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import useToggleList from '@/app/hooks/useToggleList';
+import { motion } from 'framer-motion';
 import EventTexts from './EventTexts';
 import EventImage from './EventImage';
 
@@ -11,7 +12,7 @@ const eventsData = [
   {
     src: 'family-gathering',
     title: 'Family Gathering',
-    desription: `
+    description: `
       We love catering for entire families. So please bring
       everyone along for a special meal with your loved
       ones. We’ll provide a memorable experience for all.
@@ -20,7 +21,7 @@ const eventsData = [
   {
     src: 'special-events',
     title: 'Special Events',
-    desription: `
+    description: `
       Whether it’s a romantic dinner or special date you’re
       celebrating with others we’ll look after you. We’ll be
       sure to mark your special date with an unforgettable
@@ -30,7 +31,7 @@ const eventsData = [
   {
     src: 'social-events',
     title: 'Social Events',
-    desription: `
+    description: `
       Are you looking to have a larger social event? No
       problem! We’re more than happy to cater for big
       parties. We’ll work with you to make your event a hit
@@ -40,10 +41,11 @@ const eventsData = [
 ];
 
 function Events() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const { toggleEffect } = useToggleList();
 
   useEffect(() => {
+    toggleEffect(0, 'div#imgsContainer > section', 'img-effect');
+    toggleEffect(0, 'div#textContainer > div', 'txt-effect');
     toggleEffect(0, 'ul#eventsItems > div', 'underline-effect');
   }, [toggleEffect]);
 
@@ -74,9 +76,21 @@ function Events() {
           xl:w-[1110px]
         "
       >
-        <EventImage src={eventsData[currentIndex].src} />
 
-        <section className="
+        <motion.div
+          id="imgsContainer"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'tween', delay: 0.3, duration: 0.4 }}
+        >
+          {eventsData.map((data) => (
+            <EventImage key={data.title} src={data.src} />
+          ))}
+        </motion.div>
+
+        <motion.section
+          className="
             flex
             flex-col
             justify-center
@@ -85,11 +99,19 @@ function Events() {
             max-md:items-center
             max-md:text-center
           "
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: 'tween', delay: 0.3, duration: 0.4 }}
         >
-          <EventTexts
-            title={eventsData[currentIndex].title}
-            description={eventsData[currentIndex].desription}
-          />
+          <div id="textContainer">
+            {eventsData.map((data) => (
+              <EventTexts
+                title={data.title}
+                description={data.description}
+              />
+            ))}
+          </div>
 
           <ul
             id="eventsItems"
@@ -115,11 +137,12 @@ function Events() {
                 key={item}
                 tabIndex={0}
                 onClick={() => {
-                  setCurrentIndex(index);
+                  toggleEffect(index, 'div#imgsContainer > section', 'img-effect');
+                  toggleEffect(index, 'div#textContainer > div', 'txt-effect');
                   toggleEffect(index, 'ul#eventsItems > div', 'underline-effect');
                 }}
                 onKeyDown={() => {
-                  setCurrentIndex(index);
+                  toggleEffect(index, 'div#imgsContainer > section', 'img-effect');
                   toggleEffect(index, 'ul#eventsItems > div', 'underline-effect');
                 }}
                 className={`
@@ -151,7 +174,7 @@ function Events() {
               </div>
             ))}
           </ul>
-        </section>
+        </motion.section>
       </section>
     </section>
   );

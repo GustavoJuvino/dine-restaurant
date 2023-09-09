@@ -1,8 +1,6 @@
 import { useCallback } from 'react';
 
 const useToggleList = () => {
-  // const [value, setValue] = useState('');
-
   const toggleEffect = useCallback((index: number, element: string, className: string) => {
     const elementArray = document.querySelectorAll(element);
 
