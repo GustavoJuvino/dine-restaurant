@@ -27,9 +27,9 @@
 
 <!-- Desktop -->
 <h2 align="center">Desktop Version 🖥️</h2>
-<img src="./github-imgs/home.png" title="Home">
-<img src="./github-imgs/category-1.png" title="Form-1">
-<img src="./github-imgs/category-2.png" title="Form-2">
+<img src="./github-imgs/desktop-1.png" title="Home">
+<img src="./github-imgs/desktop-2.png" title="Form-1">
+<img src="./github-imgs/desktop-3.png" title="Form-2">
 
 <!-- Mobile -->
 <h2 align="center">Mobile Version 📱</h2>
